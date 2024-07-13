@@ -13,7 +13,16 @@ SECRET_KEY = 'django-insecure-v-=56+zq=fh&!05pi59-xg5^llqv#n@3ygxb0h1&f!wm+_ntxk
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']  # For development, allow all hosts
+ALLOWED_HOSTS = ['*']
+
+# SRF settings
+CSRF_TRUSTED_ORIGINS = ['https://web-production-2a58d.up.railway.app']
+
+# Security settings (recommended for production)
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 INSTALLED_APPS = [
     'django.contrib.admin',
